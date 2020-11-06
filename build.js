@@ -60,7 +60,7 @@
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 1);
+/******/ 	return __webpack_require__(__webpack_require__.s = 2);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -96,29 +96,74 @@ module.exports = g;
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__vue_js__ = __webpack_require__(2);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__vue_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__vue_js__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_js__ = __webpack_require__(6);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "num1", function() { return num1; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "num2", function() { return num2; });
+/* harmony export (immutable) */ __webpack_exports__["add"] = add;
+var app = {
+  template:'<div>111</div>'
+};
 
+
+var num2 = 3;
+
+var num1 = 2;
+
+
+
+
+
+function add(x, y) {
+  return x + y;
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (app);
+
+/***/ }),
+/* 2 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__vue_js__ = __webpack_require__(3);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__vue_js___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0__vue_js__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_js__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app__ = __webpack_require__(1);
 //整个项目的入口文件
 
 
 
 
 
+/** 单个引入
+  import {num1,num2,add} from './app.js';
+
+  console.log(num1);    //2
+  console.log(num2);    //3
+  console.log(add(num1,num2));    //5
+ */
+
+/** 全部引入
+ *
+ * */
+
+
+console.log(__WEBPACK_IMPORTED_MODULE_2__app__);
+console.log(__WEBPACK_IMPORTED_MODULE_2__app__["num1"]);    //2
+console.log(__WEBPACK_IMPORTED_MODULE_2__app__["num2"]);    //3
+console.log(__WEBPACK_IMPORTED_MODULE_2__app__["add"](__WEBPACK_IMPORTED_MODULE_2__app__["num1"],__WEBPACK_IMPORTED_MODULE_2__app__["num2"]));    //5
 
 
 new __WEBPACK_IMPORTED_MODULE_0__vue_js___default.a({
   el:'#app',
   components:{
-    App:__WEBPACK_IMPORTED_MODULE_1__app_js__["a" /* default */]
+    App:__WEBPACK_IMPORTED_MODULE_1__app_js__["default"]
   },
   template:'<App />'
 });
 
 
 /***/ }),
-/* 2 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, setImmediate) {/*!
@@ -12087,10 +12132,10 @@ new __WEBPACK_IMPORTED_MODULE_0__vue_js___default.a({
 
 }));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0), __webpack_require__(3).setImmediate))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0), __webpack_require__(4).setImmediate))
 
 /***/ }),
-/* 3 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {var scope = (typeof global !== "undefined" && global) ||
@@ -12146,7 +12191,7 @@ exports._unrefActive = exports.active = function(item) {
 };
 
 // setimmediate attaches itself to the global object
-__webpack_require__(4);
+__webpack_require__(5);
 // On some exotic environments, it's not clear which object `setimmediate` was
 // able to install onto.  Search each possibility in the same order as the
 // `setimmediate` library.
@@ -12160,7 +12205,7 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, process) {(function (global, undefined) {
@@ -12350,10 +12395,10 @@ exports.clearImmediate = (typeof self !== "undefined" && self.clearImmediate) ||
     attachTo.clearImmediate = clearImmediate;
 }(typeof self === "undefined" ? typeof global === "undefined" ? this : global : self));
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0), __webpack_require__(5)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0), __webpack_require__(6)))
 
 /***/ }),
-/* 5 */
+/* 6 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -12541,16 +12586,6 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-
-/***/ }),
-/* 6 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-var app = {
-  template:'<div>111</div>'
-};
-/* harmony default export */ __webpack_exports__["a"] = (app);
 
 /***/ })
 /******/ ]);
