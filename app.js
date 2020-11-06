@@ -1,5 +1,5 @@
 var app = {
-  template:'<div>111</div>'
+  template:'<div>1111</div>'
 };
 
 
