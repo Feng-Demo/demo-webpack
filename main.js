@@ -1,8 +1,10 @@
 //整个项目的入口文件
-
 import Vue from './vue.js';
 
 import app from './app.js';
+import img from './img.js';
+
+import "./index.css";   //样式文件
 
 /** 单个引入
   import {num1,num2,add} from './app.js';
@@ -21,13 +23,19 @@ import app from './app.js';
   console.log(obj.add(obj.num1,obj.num2));    //5
  *
  * */
-
+var temp = {
+  components:{
+    App:app,
+    Img:img,
+  },
+  template:'<div><App/><Img/></div>'
+};
 
 
 new Vue({
   el:'#app',
   components:{
-    App:app
+    Temp:temp
   },
-  template:'<App />'
+  template:'<Temp />'
 });
