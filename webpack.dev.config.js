@@ -11,7 +11,11 @@ module.exports = {
         //publicPath:'./dist/',   //打包之后的文件需要配置访问路径
         filename: 'build.js'    //打包完成输出文件名称
     },
-    watch:true,     //监听代码改动，需要刷新页面
+    // watch:true,     //监听代码改动，需要刷新页面
+    devServer: {
+        port: 3001,
+        open: true
+    },
     module: {
         loaders: [
             {
@@ -20,7 +24,7 @@ module.exports = {
             },
             {
                 test: /\.(jpg|jpeg|gif|png|sug)/,
-                loader: 'url-loader?limit=133,404'
+                loader: 'url-loader?limit=10000'
             }
         ]
     },
