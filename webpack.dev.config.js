@@ -4,7 +4,7 @@ const htmlWebpackPlugin = require('html-webpack-plugin');   //生成html文件
 module.exports = {
     // entry: './main.js',
     entry: {
-        main: './main.js'
+        main: './src/main.js'
     },
     output: {
         path:path.resolve(__dirname,'./dist'),  //打包文件输出目录
@@ -18,6 +18,10 @@ module.exports = {
     },
     module: {
         loaders: [
+            {
+                test: /\.vue/,
+                loader: 'vue-loader'
+            },
             {
                 test: /\.css$/,
                 loader: 'style-loader!css-loader'
