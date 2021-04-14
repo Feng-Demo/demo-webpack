@@ -1,10 +1,14 @@
 //整个项目的入口文件
 import Vue from 'vue';
+import VueRouter from 'vue-router';
 
 import App from './app.vue';
 // import img from './img.js';
 
 import "./style/index.css";   //样式文件
+
+
+Vue.use(VueRouter);
 
 /** 单个引入
  import {num1,num2,add} from './app.js';
@@ -42,10 +46,30 @@ import "./style/index.css";   //样式文件
 //     template:'<Temp />'
 // });
 
+/**
+ * 小坑1  加上{} 后需要 return
+ * render: h => h(App) 等同于 render: h => { return h(App) }
+ * render: h => { h(App) }  =（正确写法）=>  render: h => { return h(App) }
+ * 如果箭头函数的函数体只有一句代码，就是简单返回某个变量或者返回一个简单的JS表达式，可以省去函数体的大括号{ }。
+ *
+ * 小坑2 new Vue({}) 中的 router 不可以随意命名
+ * */
+const Foo = { template: '<div>foo</div>' }
+const Bar = { template: '<div>bar</div>' }
+
+const routes = [
+    { path: '/', component:Foo },
+    { path: '/bar', component: Bar }
+];
+
+// import route from './router/index';
+
+const router = new VueRouter({
+    routes
+});
 
 new Vue({
     el:'#app',
-    render: h => {
-        h(App)
-    }
+    router: router,
+    render: h => h(App)
 });

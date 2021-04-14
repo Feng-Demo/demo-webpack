@@ -2,6 +2,7 @@
 const path = require('path');   //处理路径
 const htmlWebpackPlugin = require('html-webpack-plugin');   //生成html文件
 module.exports = {
+
     // entry: './main.js',
     entry: {
         main: './src/main.js'
@@ -12,9 +13,9 @@ module.exports = {
         filename: 'build.js'    //打包完成输出文件名称
     },
     // watch:true,     //监听代码改动，需要刷新页面
+
     devServer: {
-        port: 3001,
-        open: true
+        port: 8080,
     },
     module: {
         loaders: [
@@ -36,5 +37,15 @@ module.exports = {
         new htmlWebpackPlugin({ //生成html文件
             template: './index.html'
         })
-    ]
+    ],
+    /**
+     * vue有两种形式的代码 compiler（模板）模式和runtime模式（运行时），vue模块的package.json的main字段默认为runtime模式， 指向了"dist/vue.runtime.common.js"位置。
+     * alias 重定向vue引入文件目录
+     * */
+    resolve: {  //解决
+        extensions: ['.js', '.vue'],
+        alias: {
+            'vue': 'vue/dist/vue.esm.js',
+        }
+    }
 };
