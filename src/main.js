@@ -1,11 +1,9 @@
 //整个项目的入口文件
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-
 import App from './app.vue';
-// import img from './img.js';
 
-import "./style/index.css";   //样式文件
+import "./style/index.less";   //样式文件
 
 
 Vue.use(VueRouter);
@@ -54,15 +52,15 @@ Vue.use(VueRouter);
  *
  * 小坑2 new Vue({}) 中的 router 不可以随意命名
  * */
-const Foo = { template: '<div>foo</div>' }
-const Bar = { template: '<div>bar</div>' }
+// const Foo = { template: '<div>foo</div>' };
+// const Bar = { template: '<div>bar</div>' };
+//
+// const routes = [
+//     { path: '/', component:Foo },
+//     { path: '/bar', component: Bar }
+// ];
 
-const routes = [
-    { path: '/', component:Foo },
-    { path: '/bar', component: Bar }
-];
-
-// import route from './router/index';
+import routes from './router/index';
 
 const router = new VueRouter({
     routes

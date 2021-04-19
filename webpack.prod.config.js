@@ -19,6 +19,10 @@ module.exports = {
                 loader: 'style-loader!css-loader'
             },
             {
+                test: /\.less$/,
+                use: ['style-loader','css-loader','less-loader']
+            },
+            {
                 test: /\.(jpg|jpeg|gif|png|sug)/,
                 loader: 'url-loader?limit=5000'
             }
@@ -28,5 +32,15 @@ module.exports = {
         new htmlWebpackPlugin({ //生成html文件
             template: './index.html'
         })
-    ]
+    ],
+    /**
+     * vue有两种形式的代码 compiler（模板）模式和runtime模式（运行时），vue模块的package.json的main字段默认为runtime模式， 指向了"dist/vue.runtime.common.js"位置。
+     * alias 重定向vue引入文件目录
+     * */
+    resolve: {  //解决
+        extensions: ['.js', '.vue'],
+        alias: {
+            'vue': 'vue/dist/vue.esm.js',
+        }
+    }
 };

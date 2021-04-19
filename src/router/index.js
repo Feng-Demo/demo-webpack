@@ -5,7 +5,8 @@ const route = [
         meta: {
             title: '首页'
         },
-        component: { template: '<div>foo</div>' }
+        component: resolve => require(['../views/index.vue'],resolve)
+
     },
 ];
 export default route;

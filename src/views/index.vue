@@ -1,5 +1,16 @@
 <template>
     <div>
-        <div>12231321312</div>
+        <leftMenu></leftMenu>
     </div>
 </template>
+<script>
+    import leftMenu from '../components/left-menu/left-menu.vue';
+    export default {
+        components:{
+            leftMenu
+        },
+        mounted() {
+            console.log(process);
+        }
+    }
+</script>
