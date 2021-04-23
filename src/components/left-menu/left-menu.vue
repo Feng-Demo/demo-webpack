@@ -1,8 +1,8 @@
 <template>
     <div class="left-menu">
-
-        <MenuTemp v-for="item in menuData" :menuId.sync="menuId" :key="item.id" :menuItem="item"></MenuTemp>
-
+        <div class="logo">Feng</div>
+        <input ref="input" style="display: none;" :value="menuId" @input="$emit('changeMenu',$refs.input.value)">
+        <MenuTemp :ref="'MenuTemp' + menuId" v-for="item in menuData" :menuId="menuId" :key="item.id" :menuItem="item"></MenuTemp>
     </div>
 </template>
 <script>
@@ -12,21 +12,31 @@
             MenuTemp
         },
         props: {
-            menuData: Array
+            menuId: String,
+            menuData: Array,
+        },
+        model: {
+            prop:'menuId',
+            event:'changeMenu'
+        },
+        watch:{
+            menuId() {
+            }
         },
         provide() {
             return {
                 changeMenuId: (id = '') => {
-                    this.menuId = id;
+                    this.$emit('changeMenu',id);
                 }
             }
         },
         data() {
             return {
-                menuId:'12'
+
             }
         },
         methods:{
         }
+
     }
 </script>

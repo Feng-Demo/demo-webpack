@@ -13,7 +13,7 @@ module.exports = {
         filename: 'build.js'    //打包完成输出文件名称
     },
     // watch:true,     //监听代码改动，不需要刷新页面
-    devServer: {
+    devServer: {       //在本地建立一个服务器，实时更新代码
         port: 8080,
     },
     module: {
@@ -38,7 +38,9 @@ module.exports = {
     },
     plugins:[
         new webpack.DefinePlugin({  //
-            mode: 'development',
+            'process.env.NODE_ENV' : {
+                NODE_ENV: '"development"'
+            }
         }),
         new htmlWebpackPlugin({ //生成html文件
             template: './index.html'

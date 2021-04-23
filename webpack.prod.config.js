@@ -29,6 +29,9 @@ module.exports = {
         ]
     },
     plugins:[
+        new webpack.DefinePlugin({  //区分生产环境
+            'process.env.NODE_ENV' : JSON.stringify('production')
+        }),
         new htmlWebpackPlugin({ //生成html文件
             template: './index.html'
         })

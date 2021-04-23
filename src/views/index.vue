@@ -1,6 +1,6 @@
 <template>
     <div>
-        <leftMenu :menuData="menuData"></leftMenu>
+        <leftMenu v-model="menuId" :menuData="menuData" @menuIdClick="menuIdClick"></leftMenu>
     </div>
 </template>
 <script>
@@ -11,6 +11,7 @@
         },
         data() {
             return {
+                menuId:'1',
                 menuData: [
                     {
                         name: '主菜单',
@@ -47,8 +48,10 @@
                 ]
             }
         },
-        mounted() {
-//            console.log(process);
+        methods:{
+            menuIdClick(id) {
+                console.log(id);
+            }
         }
     }
 </script>

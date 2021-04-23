@@ -3,7 +3,8 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import App from './app.vue';
 
-import "./style/index.less";   //样式文件
+import "./style/normalize.css";     //初始化样式文件
+import "./style/index.less";        //样式文件
 
 
 Vue.use(VueRouter);
@@ -60,6 +61,8 @@ Vue.use(VueRouter);
 //     { path: '/bar', component: Bar }
 // ];
 
+
+//IE 不识别箭头函数报错
 import routes from './router/index';
 
 const router = new VueRouter({

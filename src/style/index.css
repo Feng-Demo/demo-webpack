@@ -1,6 +1,16 @@
+.left-menu {
+  width: 20%;
+  height: 100vh;
+  background-color: #cccccc;
+}
+.left-menu .logo {
+  text-align: center;
+}
 .left-menu .menu-temp {
   margin-left: 20px;
-  background-color: white;
+}
+.left-menu .menu-text {
+  margin-left: -20px;
 }
 .left-menu .active {
   background-color: red;
