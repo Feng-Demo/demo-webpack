@@ -1,18 +1,22 @@
 <template>
-    <div class="menu-temp">
-        <div>{{menuItem.name}}</div>
-        <MenuTemp v-for="item in menuItem.children" :key="item.id" :menuItem="item"></MenuTemp>
+    <div class="menu-temp" @click.stop="handleMenu()">
+        <div :class="menuId === menuItem.id?'active':''">{{menuItem.name}}</div>
+        <MenuTemp v-for="item in menuItem.children" :key="item.id" :menuItem="item" :menuId="menuId"></MenuTemp>
     </div>
 </template>
 <script>
-//    import menuTemp from './menu-temp.vue'
     export default {
         name: 'MenuTemp',
-        components: {
-//            menuTemp
-        },
+        components: {},
         props:{
-            menuItem: Object
+            menuId: String,
+            menuItem: Object,
+        },
+        inject: ['changeMenuId'],
+        methods:{
+            handleMenu() {
+                this.changeMenuId(this.menuItem.id);
+            },
         }
     }
 </script>

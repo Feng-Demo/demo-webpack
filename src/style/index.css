@@ -1,3 +1,7 @@
 .left-menu .menu-temp {
   margin-left: 20px;
+  background-color: white;
+}
+.left-menu .active {
+  background-color: red;
 }

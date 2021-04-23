@@ -1,7 +1,7 @@
 <template>
     <div class="left-menu">
 
-        <MenuTemp v-for="item in menuData" :key="item.id" :menuItem="item"></MenuTemp>
+        <MenuTemp v-for="item in menuData" :menuId.sync="menuId" :key="item.id" :menuItem="item"></MenuTemp>
 
     </div>
 </template>
@@ -11,43 +11,22 @@
         components:{
             MenuTemp
         },
+        props: {
+            menuData: Array
+        },
+        provide() {
+            return {
+                changeMenuId: (id = '') => {
+                    this.menuId = id;
+                }
+            }
+        },
         data() {
             return {
-                menuData: [
-                    {
-                        name: '主菜单',
-                        id: '1',
-                        children: [
-                            {
-                                name: '二级菜单1',
-                                id: '11',
-                                children: [],
-                            },
-                            {
-                                name: '二级菜单2',
-                                id: '12',
-                                children: [
-                                    {
-                                        name: '三级菜单1',
-                                        id: '121',
-                                        children: [],
-                                    },
-                                    {
-                                        name: '三级菜单2',
-                                        id: '122',
-                                        children: [],
-                                    }
-                                ],
-                            },
-                        ],
-                    },
-                    {
-                        name: '一级菜单2',
-                        id: '2',
-                        children: [],
-                    },
-                ]
+                menuId:'12'
             }
+        },
+        methods:{
         }
     }
 </script>
