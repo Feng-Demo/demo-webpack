@@ -37,7 +37,7 @@ module.exports = {
         ]
     },
     plugins:[
-        new webpack.DefinePlugin({  //
+        new webpack.DefinePlugin({  //区分环境
             'process.env.NODE_ENV' : {
                 NODE_ENV: '"development"'
             }

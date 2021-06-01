@@ -1,8 +1,10 @@
 <template>
     <div class="left-menu">
-        <div class="logo">Feng</div>
-        <input ref="input" style="display: none;" :value="menuId" @input="$emit('changeMenu',$refs.input.value)">
-        <MenuTemp :ref="'MenuTemp' + menuId" v-for="item in menuData" :menuId="menuId" :key="item.id" :menuItem="item"></MenuTemp>
+        <div class="menu-layout">
+            <div class="logo">Feng</div>
+            <input ref="input" style="display: none;" :value="menuId" @input="$emit('changeMenu',$refs.input.value)">
+            <MenuTemp :ref="'MenuTemp' + menuId" v-for="item in menuData" :menuId="menuId" :key="item.id" :menuItem="item"></MenuTemp>
+        </div>
     </div>
 </template>
 <script>
